@@ -38,7 +38,10 @@ function calculateSavings() {
     const savingsBalance = parseFloat(income.value) * (parseFloat(savings.value) / 100);
     const totalExpensesAndRemainingBalance = calculateExpenses();
 
-    if (savingsBalance > totalExpensesAndRemainingBalance[1]) {
+    if(totalExpensesAndRemainingBalance[1] == 0) {
+        return [0, 0];
+    }
+    else if (savingsBalance > totalExpensesAndRemainingBalance[1]) {
         alert('Your savings balance is greater than remaining balance!!! Please decrease your expenses.')
         return [0, 0];
     }
